@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 
 //Route files
 const hospitals = require("./routes/hospitals");
+const appointments = require("./routes/appointments");
 const auth = require("./routes/auth");
 
 //Load env vars
@@ -27,7 +28,9 @@ app.get("/", (req, res) => {
   res.status(200).json({ success: true, data: { id: 1 } });
 });
 
+//Mount routers
 app.use("/api/v1/hospitals", hospitals);
+app.use("/api/v1/appointments", appointments);
 app.use("/api/v1/auth", auth);
 
 // Connect to database

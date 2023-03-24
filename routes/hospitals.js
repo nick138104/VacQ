@@ -1,4 +1,3 @@
-const { request } = require("express");
 const express = require("express");
 const {
   getHospitals,
@@ -8,6 +7,9 @@ const {
   deleteHospital,
   getVacCenters,
 } = require("../controllers/hospitals");
+
+//Include other resource routers
+const appointmentRouter = require("./appointments");
 
 const router = express.Router();
 
